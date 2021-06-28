@@ -1,0 +1,29 @@
+{
+    "transparency16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true
+    },
+    "レベル1": {
+        "id": "レベル1",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxMDAwMTAwMDAzMDQwNDA0MDQwNDA0MDQwNDA0MDQwNDA0MDQwNDA1MDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDYwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2MDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDYwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2MDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDYwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2MDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDYwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNjAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2MDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDYwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNjAxMDgwODA4MDgwODA4MDgwODA4MDgwODA4MDgwODA3MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.builtin.forestTiles13",
+            "sprites.builtin.forestTiles9",
+            "sprites.builtin.forestTiles5",
+            "sprites.builtin.forestTiles6",
+            "sprites.builtin.forestTiles7",
+            "sprites.builtin.forestTiles11",
+            "sprites.builtin.forestTiles15",
+            "sprites.builtin.forestTiles14"
+        ],
+        "displayName": "レベル1"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myTiles"
+    }
+}
