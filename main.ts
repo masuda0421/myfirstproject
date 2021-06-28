@@ -81,6 +81,83 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     true
     )
 })
+function bgm2 () {
+    music.playTone(349, music.beat(BeatFraction.Half))
+    music.playTone(349, music.beat(BeatFraction.Quarter))
+    music.playTone(349, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(349, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(349, music.beat(BeatFraction.Half))
+    music.playTone(294, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(294, music.beat(BeatFraction.Quarter))
+    music.playTone(294, music.beat(BeatFraction.Whole))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(349, music.beat(BeatFraction.Half))
+    music.playTone(349, music.beat(BeatFraction.Quarter))
+    music.playTone(349, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(392, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(415, music.beat(BeatFraction.Half))
+    music.playTone(392, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(349, music.beat(BeatFraction.Half))
+    music.playTone(392, music.beat(BeatFraction.Whole))
+    music.playTone(392, music.beat(BeatFraction.Half))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(349, music.beat(BeatFraction.Half))
+    music.playTone(349, music.beat(BeatFraction.Quarter))
+    music.playTone(349, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(392, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(415, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(523, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(587, music.beat(BeatFraction.Half))
+    music.playTone(587, music.beat(BeatFraction.Half))
+    music.playTone(587, music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.playTone(587, music.beat(BeatFraction.Quarter))
+    music.playTone(523, music.beat(BeatFraction.Quarter))
+    music.playTone(523, music.beat(BeatFraction.Double))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Half))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(392, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(392, music.beat(BeatFraction.Quarter))
+    music.playTone(392, music.beat(BeatFraction.Whole))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Half))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(392, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.rest(music.beat(BeatFraction.Quarter))
+    music.playTone(587, music.beat(BeatFraction.Half))
+    music.playTone(440, music.beat(BeatFraction.Quarter))
+    music.playTone(392, music.beat(BeatFraction.Half))
+}
 function potion1 () {
     if (info.score() % 10 == 0) {
         potion = sprites.create(img`
@@ -305,24 +382,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy2, function (sprite, otherS
     100,
     false
     )
-    enemy2.setImage(img`
-        . . f f f . . . . . . . . . . . 
-        f f f c c . . . . . . . . f f f 
-        f f c c c . c c . . . f c b b c 
-        f f c 3 c c 3 c c f f b b b c . 
-        f f c 3 b c 3 b c f b b c c c . 
-        f c b b b b b b c f b c b c c . 
-        c c 1 b b b 1 b c b b c b b c . 
-        c b b b b b b b b b c c c b c . 
-        c b 1 f f 1 c b b c c c c c . . 
-        c f 1 f f 1 f b b b b f c . . . 
-        f f f f f f f b b b b f c . . . 
-        f f 2 2 2 2 f b b b b f c c . . 
-        . f 2 2 2 2 2 b b b c f . . . . 
-        . . f 2 2 2 b b b c f . . . . . 
-        . . . f f f f f f f . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `)
     mySprite.startEffect(effects.disintegrate, 500)
     music.bigCrash.play()
     info.changeLifeBy(-1)
@@ -563,32 +622,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     100,
     false
     )
-    enemiy.setImage(img`
-        ........................
-        ........................
-        ........................
-        ........................
-        ..........ffff..........
-        ........ff1111ff........
-        .......fb111111bf.......
-        .......f11111111f.......
-        ......fd11111111df......
-        ......fd11111111df......
-        ......fddd1111dddf......
-        ......fbdbfddfbdbf......
-        ......fcdcf11fcdcf......
-        .......fb111111bf.......
-        ......fffcdb1bdffff.....
-        ....fc111cbfbfc111cf....
-        ....f1b1b1ffff1b1b1f....
-        ....fbfbffffffbfbfbf....
-        .........ffffff.........
-        ...........fff..........
-        ........................
-        ........................
-        ........................
-        ........................
-        `)
     mySprite.startEffect(effects.disintegrate, 500)
     music.bigCrash.play()
     info.changeLifeBy(-1)
@@ -653,11 +686,10 @@ info.setScore(0)
 info.setLife(4)
 makeNewItem()
 forever(function () {
-    bgm1()
-    if (info.score() == 10) {
+    if (info.score() == 5) {
         enemiy.setVelocity(60, 60)
     }
-    if (info.score() == 20) {
+    if (info.score() == 10) {
         enemy2 = sprites.create(img`
             . . f f f . . . . . . . . . . . 
             f f f c c . . . . . . . . f f f 
