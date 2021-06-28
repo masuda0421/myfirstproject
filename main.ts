@@ -308,6 +308,80 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy2, function (sprite, otherSprite) {
+    animation.runImageAnimation(
+    enemy2,
+    [img`
+        . . f f f . . . . . . . . f f f 
+        . f f c c . . . . . . f c b b c 
+        f f c c . . . . . . f c b b c . 
+        f c f c . . . . . . f b c c c . 
+        f f f c c . c c . f c b b c c . 
+        f f c 3 c c 3 c c f b c b b c . 
+        f f b 3 b c 3 b c f b c c b c . 
+        . c 1 b b b 1 b c b b c c c . . 
+        . c 1 b b b 1 b b c c c c . . . 
+        c b b b b b b b b b c c . . . . 
+        c b 1 f f 1 c b b b b f . . . . 
+        f f 1 f f 1 f b b b b f c . . . 
+        f f 2 2 2 2 f b b b b f c c . . 
+        . f 2 2 2 2 b b b b c f . . . . 
+        . . f b b b b b b c f . . . . . 
+        . . . f f f f f f f . . . . . . 
+        `,img`
+        . . f f f . . . . . . . . . . . 
+        f f f c c . . . . . . . . f f f 
+        f f c c c . c c . . . f c b b c 
+        f f c 3 c c 3 c c f f b b b c . 
+        f f c 3 b c 3 b c f b b c c c . 
+        f c b b b b b b c f b c b c c . 
+        c c 1 b b b 1 b c b b c b b c . 
+        c b b b b b b b b b c c c b c . 
+        c b 1 f f 1 c b b c c c c c . . 
+        c f 1 f f 1 f b b b b f c . . . 
+        f f f f f f f b b b b f c . . . 
+        f f 2 2 2 2 f b b b b f c c . . 
+        . f 2 2 2 2 2 b b b c f . . . . 
+        . . f 2 2 2 b b b c f . . . . . 
+        . . . f f f f f f f . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . c c . c c . . . . . . . . 
+        . . f 3 c c 3 c c c . . . . . . 
+        . f c 3 b c 3 b c c c . . . . . 
+        f c b b b b b b b b f f . . . . 
+        c c 1 b b b 1 b b b f f . . . . 
+        c b b b b b b b b c f f f . . . 
+        c b 1 f f 1 c b b f f f f . . . 
+        f f 1 f f 1 f b c c b b b . . . 
+        f f f f f f f b f c c c c . . . 
+        f f 2 2 2 2 f b f b b c c c . . 
+        . f 2 2 2 2 2 b c c b b c . . . 
+        . . f 2 2 2 b f f c c b b c . . 
+        . . . f f f f f f f c c c c c . 
+        . . . . . . . . . . . . c c c c 
+        `,img`
+        . f f f . . . . . . . . f f f . 
+        f f c . . . . . . . f c b b c . 
+        f c c . . . . . . f c b b c . . 
+        c f . . . . . . . f b c c c . . 
+        c f f . . . . . f f b b c c . . 
+        f f f c c . c c f b c b b c . . 
+        f f f c c c c c f b c c b c . . 
+        . f c 3 c c 3 b c b c c c . . . 
+        . c b 3 b c 3 b b c c c c . . . 
+        c c b b b b b b b b c c . . . . 
+        c 1 1 b b b 1 1 b b b f c . . . 
+        f b b b b b b b b b b f c c . . 
+        f b c b b b c b b b b f . . . . 
+        . f 1 f f f 1 b b b c f . . . . 
+        . . f b b b b b b c f . . . . . 
+        . . . f f f f f f f . . . . . . 
+        `],
+    100,
+    false
+    )
     mySprite.startEffect(effects.disintegrate, 500)
     music.bigCrash.play()
     info.changeLifeBy(-1)
@@ -442,6 +516,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Potion, function (sprite, otherS
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    scene.setBackgroundColor(13)
     animation.runImageAnimation(
     enemiy,
     [img`
@@ -608,6 +683,7 @@ enemiy = sprites.create(img`
 enemiy.setVelocity(50, 50)
 enemiy.setPosition(0, 0)
 enemiy.setFlag(SpriteFlag.BounceOnWall, true)
+let en = 0
 info.setScore(0)
 info.setLife(4)
 makeNewItem()
@@ -618,29 +694,33 @@ forever(function () {
     bgm2()
 })
 forever(function () {
-    if (info.score() == 5) {
+    if (info.score() == 10) {
         enemiy.setVelocity(60, 60)
     }
-    if (info.score() == 10) {
-        enemy2 = sprites.create(img`
-            . . f f f . . . . . . . . . . . 
-            f f f c c . . . . . . . . f f f 
-            f f c c c . c c . . . f c b b c 
-            f f c 3 c c 3 c c f f b b b c . 
-            f f c 3 b c 3 b c f b b c c c . 
-            f c b b b b b b c f b c b c c . 
-            c c 1 b b b 1 b c b b c b b c . 
-            c b b b b b b b b b c c c b c . 
-            c b 1 f f 1 c b b c c c c c . . 
-            c f 1 f f 1 f b b b b f c . . . 
-            f f f f f f f b b b b f c . . . 
-            f f 2 2 2 2 f b b b b f c c . . 
-            . f 2 2 2 2 2 b b b c f . . . . 
-            . . f 2 2 2 b b b c f . . . . . 
-            . . . f f f f f f f . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpriteKind.Enemy2)
-        enemy2.setPosition(78, 57)
-        enemy2.follow(mySprite, 10)
+    if (info.score() == 20) {
+        en += 1
+        if (en == 1) {
+            enemy2 = sprites.create(img`
+                . . f f f . . . . . . . . . . . 
+                f f f c c . . . . . . . . f f f 
+                f f c c c . c c . . . f c b b c 
+                f f c 3 c c 3 c c f f b b b c . 
+                f f c 3 b c 3 b c f b b c c c . 
+                f c b b b b b b c f b c b c c . 
+                c c 1 b b b 1 b c b b c b b c . 
+                c b b b b b b b b b c c c b c . 
+                c b 1 f f 1 c b b c c c c c . . 
+                c f 1 f f 1 f b b b b f c . . . 
+                f f f f f f f b b b b f c . . . 
+                f f 2 2 2 2 f b b b b f c c . . 
+                . f 2 2 2 2 2 b b b c f . . . . 
+                . . f 2 2 2 b b b c f . . . . . 
+                . . . f f f f f f f . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `, SpriteKind.Enemy2)
+            enemy2.setPosition(78, 57)
+            enemy2.follow(mySprite, 10)
+            en += 1
+        }
     }
 })
