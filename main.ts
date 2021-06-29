@@ -1337,6 +1337,7 @@ info.setLife(4)
 makeNewItem()
 // ・BGMは「Megalovania」を入れました。熱く最高の曲です。
 forever(function () {
+    music.setVolume(255)
     for (let index = 0; index < 4; index++) {
         bgm1()
     }
